@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -28,6 +28,15 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
       },
     ]
   },

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./app.css"
+import "./app.less"
+import { Link } from "react-router-dom";
 
 const App = () => {
 
@@ -21,6 +23,9 @@ const App = () => {
                 <div>
                     <button onClick={add}>+</button>
                     <button onClick={minus}>-</button>
+                </div>
+                <div>
+                    <Link to='/next-page'>setting</Link>
                 </div>
             </div>
         </div>
